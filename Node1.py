@@ -2,10 +2,10 @@ from threading import Thread
 import node
 
 if __name__ == '__main__':
-    node = node.Node("Node_1", 1, "127.0.0.1", 0, 4000, [
-        ('Node_2', '127.0.0.1', 4001),
-        ('Node_3', '127.0.0.1', 4002),
-        ('Node_4', '127.0.0.1', 4003),
+    node = node.Node("Node_1", 1, "172.31.92.60", 0, 4000, [
+        ('Node_2', '52.91.24.122', 4000),
+        ('Node_3', '18.207.242.175', 4000),
+        ('Node_4', '3.80.120.27', 4000),
         ]
     )
     print('Starting thread 1 (event listener):')
