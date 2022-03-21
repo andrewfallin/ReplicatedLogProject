@@ -1,28 +1,12 @@
 
 import Message as ms
 import Event as e
-import calendar as cal
+import uuid
+import myCalendar as cal
 
-def start():
-    print("***** Welcome to the Calendar *****")
-    print("* Commands:                       *")
-    print("*  i - insert a new event         *")
-    print("*  v - view calendar              *")
-    print("*  z - exit                       *")
-    print("***********************************")
-    print("Please enter a command:")
-    message = input("-> ")
-    while True:
-        if message == 'i':
-            insertEvent()
-        if message == 'v':
-            print("lol")
-        if message == 'z':
-            break
-            #view_calendar()
-        message = input("-> ")
 
-def insertEvent():
+
+def getEventDetails():
     print("******************** Entering New Event ********************")
     print("")
     print("What is the name of the appointment?")
@@ -30,16 +14,32 @@ def insertEvent():
 
     day = getDayInput()
 
-    print("What is the appointment's start time?")
+    print("What is the appointment's start time? (from 10:00am to 1:30pm")
     start = input("-> ")
 
-    print("Who are the participants (please separate by commas)?")
-    print("1. node1         3. node3")
-    print("2. node2         4. node4")
-    participants = input("-> ")
+    print("What is the appointment's end time (half hour increments only)?")
+    end = input("-> ")
 
-    newEvent = e.Event(name, day, start, 0, participants)
-    print(newEvent)
+    print("Who are the participants? (enter 1 per line and enter d when done)")
+    print("1. Node_1         3. Node_3")
+    print("2. Node_2         4. Node_4")
+    participantList = []
+    entry = input("-> ")
+    participantList.append(entry)
+    #entry = input("-> ")
+    while entry != 'd':
+        entry = input("-> ")
+        if entry != 'd':
+            participantList.append(entry)
+    print(participantList)
+    eventId = uuid.uuid4()
+    print(eventId)
+    newEvent = e.Event(str(eventId), name, day, start, end, participantList)
+
+    return newEvent
+
+
+
 
 def getDayInput():
     print("What day would you like to schedule the event?")
@@ -53,6 +53,7 @@ def getDayInput():
     print("     ss - sunday")
     day = input("-> ")
     day = getDay(day)
+    return day
 
 def getDay(input):
     if input == "m":
@@ -72,5 +73,10 @@ def getDay(input):
     else:
         print ("Invalid Entry:")
         getDayInput()
+
+    #def
+
+    #def isLocalEvent(participants):
+    #   if
 
 

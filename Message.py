@@ -1,6 +1,6 @@
 import socket
 from threading import Thread
-
+import mainHandler as mh
 '''
 Array of all timeslots, each node has an init matrix at t = 0 where all timeslots are available for everyone
 If a node creates an event, we insert the event details in that timeslot.
@@ -30,7 +30,8 @@ class Node:
         print(self.name, "Started")
 
     def run(self):
-        print('press i to insert a new event')
+        mh.start()
+        """ print('press i to insert a new event')
         print('press v to view calendar')
         message = input("-> ")
         while True:
@@ -40,7 +41,7 @@ class Node:
                 view_calendar()
             print('press i to insert a new event')
             print('press v to view calendar')
-            message = input("-> ")
+            message = input("-> ")"""
 
     def send(self):
         msg_send = input("Enter event details: ")
@@ -66,12 +67,5 @@ class Node:
             self.log(msg)
 
 
-node = Node()
-print('Starting thread 1 (event listener):')
-worker_2 = Thread(target=node.receive, args=())
-worker_2.start()
 
-print('Starting thread 2 (sender):')
-worker_1 = Thread(target=node.run, args=())
-worker_1.start()
 
