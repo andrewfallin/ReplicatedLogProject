@@ -87,7 +87,7 @@ class Node:
 
             if message == 'v':
                 cal = self.getCorrectCalendar(self.name)
-                #cal.viewCalendar()
+                cal.viewCalendar()
             if message == "d":
                 print("Enter the day of the event you wish to delete: ")
                 deleteDay = input("-> ")

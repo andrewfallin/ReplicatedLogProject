@@ -153,7 +153,7 @@ class myCalendar:
             else:
                 for i in range(incrementList[2]):
                     dayList[i] = None
-            self.viewCalendar()
+            #self.viewCalendar()
             print("Event deleted")
 
 
