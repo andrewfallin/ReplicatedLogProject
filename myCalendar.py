@@ -134,7 +134,7 @@ class myCalendar:
         else:
             for i in range(incrementList[2]):
                 calEvent = dayList[i]
-                print(calEvent)
+                #print(calEvent)
                 if calEvent != None:
                     if calEvent.eventID == event.eventID:
                         return True

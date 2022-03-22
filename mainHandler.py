@@ -31,9 +31,9 @@ def getEventDetails():
         entry = input("-> ")
         if entry != 'd':
             participantList.append(entry)
-    print(participantList)
+    #print(participantList)
     eventId = uuid.uuid4()
-    print(eventId)
+    #print(eventId)
     newEvent = e.Event(str(eventId), name, day, start, end, participantList)
 
     return newEvent

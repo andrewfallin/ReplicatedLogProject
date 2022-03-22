@@ -87,7 +87,7 @@ class Node:
 
             if message == 'v':
                 cal = self.getCorrectCalendar(self.name)
-                cal.viewCalendar()
+                #cal.viewCalendar()
             if message == "d":
                 print("Enter the day of the event you wish to delete: ")
                 deleteDay = input("-> ")
@@ -219,7 +219,7 @@ class Node:
 
         newEvent = jsonpickle.decode(parsedList[1])
        # senderLog = self.decodeListofEvents(parsedList[2])
-        print(newEvent.message)
+        #print(newEvent.message)
         senderLog = jsonpickle.decode(parsedList[2])
         self.addNewAppointmentsToCal(senderLog)
         self.mergeTheLogs(senderLog)

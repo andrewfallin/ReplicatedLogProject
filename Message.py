@@ -52,8 +52,7 @@ class Node:
             # broadcast the message
             for n in self.nodes:
                 self.s.sendto(msg_send.encode('utf-8'), (n[1], n[2]))
-        else:
-            print('No available appointments at the requested time')
+
 
     def log(self, msg):
         with open("log.txt", "a") as f:
